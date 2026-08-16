@@ -10,11 +10,9 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+  // Serve static files from the Vite build output (dist/), which sits one
+  // level up from this compiled server file (dist-server/index.js).
+  const staticPath = path.resolve(__dirname, "..", "dist");
 
   app.use(express.static(staticPath));
 
