@@ -44,13 +44,12 @@ import { toast } from "sonner";
 import { jsPDF } from "jspdf";
 
 const assets = {
-  hero: "/images/campaign-home.png",
-  payments: "/images/campaign-payments.png",
-  cards: "/images/campaign-cards.png",
-  reference: "/images/reference-1.png",
-  mark: "/images/imobile-signal-mark.png",
-  bankIcon: "/images/bank-icon.png",
-  statementReference: "/images/statement-reference.png",
+  hero: "/images/campaign-hero.svg",
+  payments: "/images/campaign-payments.svg",
+  cards: "/images/campaign-cards.svg",
+  reference: "/images/reference-preview.svg",
+  bankIcon: "/icons/icon-mark.svg",
+  statementReference: "/images/statement-preview.svg",
 };
 
 const account = {
@@ -239,15 +238,15 @@ export default function Home() {
   if (!loggedIn) {
     return (
       <main className="h-[100dvh] overflow-hidden bg-[#f9efe5] px-3 py-3 text-slate-900 sm:min-h-[100dvh] sm:h-auto sm:overflow-visible sm:px-5 sm:py-8">
-        <div className="mx-auto flex h-[calc(100dvh-1.5rem)] max-w-md flex-col justify-between overflow-hidden rounded-[28px] bg-gradient-to-br from-[#ff922f] via-[#e95c25] to-[#a92f29] p-4 text-white shadow-2xl sm:min-h-[calc(100dvh-4rem)] sm:rounded-[32px] sm:p-6">
-          <div>
+        <div className="mx-auto flex h-[calc(100dvh-1.5rem)] max-w-md flex-col overflow-hidden rounded-[28px] bg-gradient-to-br from-[#ff922f] via-[#e95c25] to-[#a92f29] p-4 text-white shadow-2xl sm:min-h-[calc(100dvh-4rem)] sm:rounded-[32px] sm:p-6">
+          <div className="min-h-0 flex-1 overflow-hidden">
             <div className="flex items-center justify-between"><Logo /><span className="status-pill">Secure access</span></div>
-            <div className="mt-4 sm:mt-16">
+            <div className="mt-3 sm:mt-16">
               <p className="eyebrow text-orange-100">Your money, your rhythm</p>
               <h1 className="mt-1 max-w-[11ch] font-display text-[2.2rem] font-extrabold leading-[0.9] tracking-[-0.05em] sm:mt-3 sm:text-5xl sm:leading-[0.95]">Banking that moves with you.</h1>
               <p className="mt-3 max-w-xs text-[12px] leading-4 text-orange-50 sm:mt-6 sm:text-sm sm:leading-6">Manage your everyday banking, payments, cards, and account activity in one place.</p>
             </div>
-            <div className="mt-4 rounded-[20px] bg-[#fffaf4] p-3 text-slate-900 shadow-xl sm:mt-8 sm:rounded-[24px] sm:p-4">
+            <div className="mt-3 rounded-[20px] bg-[#fffaf4] p-3 text-slate-900 shadow-xl sm:mt-8 sm:rounded-[24px] sm:p-4">
               <div className="flex items-center justify-between"><div><p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">Current account</p><p className="mt-1 text-sm font-bold">ICICI Bank · current account</p></div><Landmark size={19} className="text-orange-600" /></div>
               <div className="mt-3 flex items-end justify-between"><div><p className="text-xs text-slate-500">Available balance</p><p className="mt-1 font-display text-2xl font-extrabold">₹ ••••••</p></div><span className="rounded-full bg-orange-100 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.12em] text-orange-700">Masked</span></div>
               <div className="mt-3 grid grid-cols-3 gap-2 border-t border-slate-100 pt-2.5"><span className="flex items-center gap-1 text-[10px] font-bold text-slate-600"><Send size={13} className="text-orange-600" /> Send</span><span className="flex items-center gap-1 text-[10px] font-bold text-slate-600"><ReceiptText size={13} className="text-orange-600" /> Bills</span><span className="flex items-center gap-1 text-[10px] font-bold text-slate-600"><CreditCard size={13} className="text-orange-600" /> Cards</span></div>
@@ -257,8 +256,8 @@ export default function Home() {
               <div className="mt-2 flex items-center justify-between text-[11px] text-orange-50"><span>Explore banking services</span><ArrowRight size={15} /></div>
             </div>
           </div>
-          <div>
-            <button onClick={() => setLoggedIn(true)} className="primary-btn w-full bg-white text-[#b83b27] hover:bg-orange-50">Enter app <ArrowRight size={17} /></button>
+          <div className="shrink-0 pt-2">
+            <button onClick={() => setLoggedIn(true)} className="primary-btn w-full bg-white text-[#b83b27] hover:bg-orange-50">Continue to app <ArrowRight size={17} /></button>
           </div>
         </div>
       </main>
